@@ -46,5 +46,5 @@ INSERT INTO dis_runner_in VALUES ('40004', '2018-06-21 17:00:00', '5800', '0');
 INSERT INTO dis_runner_in VALUES ('40005', '2011-02-11 22:00:00', '600', '0');
 
 -- Manager table request
-SELECT runner_id, date_out, date_in, method, quantity, product_type, collected, quantity 
-FROM dis_runner_in JOIN dis_runner_out ON dis_runner_out.runner_id = dis_runner_in.runner_id
+SELECT dis_runner_in.runner_id, date_out, date_in, method, product_type, collected, quantity 
+FROM dis_runner_in JOIN dis_runner_out ON dis_runner_out.runner_id = dis_runner_in.runner_id;
