@@ -21,7 +21,7 @@ CREATE TABLE inf_product(product_id INT(5), name VARCHAR(15), quantity INT(3), p
 -- first_name: manager first name
 -- DOB: date of birth
 
-CREATE TABLE inf_manager(manager_id INT(5), last_name VARCHAR(15), first_name VARCHAR(15), DOB DATE);
+CREATE TABLE inf_manager(manager_id INT(5), customer_id INT(5), product_id INT(5));
 
 -- inserts data into inf_cutomer table 
 
@@ -41,8 +41,8 @@ INSERT INTO inf_product VALUES ('20005', 'drug 5', '600', '2006-10-18 13:00:00')
 
 -- insert data into inf_manager table
 
-INSERT INTO inf_manager VALUES ('10001', 'Miller', 'Jackson', '2000-01-18');
-INSERT INTO inf_manager VALUES ('10002', 'Davis', 'Ben', '1967-10-26');
-INSERT INTO inf_manager VALUES ('10003', 'Rodriguez', 'Mateo', '1970-04-30');
-INSERT INTO inf_manager VALUES ('10004', 'Martinez', 'Daniel', '1988-03-03');
-INSERT INTO inf_manager VALUES ('10005', 'Hernandez', 'Logan', '1990-06-11');
+INSERT INTO inf_manager VALUES ('10001', '00001', '20001');
+INSERT INTO inf_manager VALUES ('10002', '00002', '20002');
+INSERT INTO inf_manager VALUES ('10003', '00003', '20003');
+INSERT INTO inf_manager VALUES ('10004', '00004', '20004');
+INSERT INTO inf_manager VALUES ('10005', '00005', '20005');
