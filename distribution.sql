@@ -48,3 +48,12 @@ INSERT INTO dis_runner_in VALUES ('40005', '2011-02-11 22:00:00', '600', '0');
 -- Manager table request
 SELECT dis_runner_in.runner_id, date_out, date_in, method, product_type, collected, quantity 
 FROM dis_runner_in JOIN dis_runner_out ON dis_runner_out.runner_id = dis_runner_in.runner_id;
+
+-- Runner Check out
+DELIMITER $$
+CREATE PROCEDURE runner_out(id INT(5), date DATETIME)
+BEGIN
+SELECT method, product_type, quantity, product_type*quantity AS collect FROM dis_runner_out WHERE runner_id = id AND date_out = date;
+END $$
+
+
