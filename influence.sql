@@ -46,3 +46,18 @@ INSERT INTO inf_manager VALUES ('10002', '00002', '20002');
 INSERT INTO inf_manager VALUES ('10003', '00003', '20003');
 INSERT INTO inf_manager VALUES ('10004', '00004', '20004');
 INSERT INTO inf_manager VALUES ('10005', '00005', '20005');
+
+-- stored procedure: manager wants to view product information in database.
+
+DROP PROCEDURE viewProducts;
+
+DELIMITER //
+CREATE PROCEDURE viewProducts(id INT(5))
+BEGIN
+SELECT inf_product.product_id, name, quantity, production_date, manager_id FROM inf_product
+JOIN inf_manager ON inf_product.product_id = inf_manager.product_id
+WHERE manager_id = id;
+END // 
+DELIMITER ; 
+
+CALL viewProducts('10001');
