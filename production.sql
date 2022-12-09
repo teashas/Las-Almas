@@ -76,4 +76,13 @@ INSERT INTO prod_supply VALUES (50001, 20001, 170, 98);
 INSERT INTO prod_supply VALUES (50002, 20002, 400, 200);       
 INSERT INTO prod_supply VALUES (50003, 20003, 500, 60);       
 INSERT INTO prod_supply VALUES (50004, 20004, 800, 12);       
-INSERT INTO prod_supply VALUES (50005, 20005, 200, 150);       
+INSERT INTO prod_supply VALUES (50005, 20005, 200, 150);    
+
+-- Return on Investment
+DELIMITER //
+CREATE PROCEDURE return_on_investment()
+BEGIN
+SELECT market_value-production_cost AS ROI 
+FROM prod_products;
+END //
+DELIMITER;
