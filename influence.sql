@@ -61,3 +61,17 @@ END //
 DELIMITER ; 
 
 CALL viewProducts('10001');
+
+-- stored procedure: manager wants to input a new client ito the database.
+
+DROP PROCEDURE insertCustomer;
+
+DELIMITER //
+CREATE PROCEDURE insertCustomer(cid INT(5), fname VARCHAR(15), lname VARCHAR(15), addy VARCHAR(60), phone INT(10))
+BEGIN
+INSERT INTO inf_customer VALUES (cid, fname, lname, addy, phone);
+END //
+DELIMITER ; 
+
+CALL insertCustomer('00006', 'Charles', 'Jr.', '401 Stain Street', '238392948');
+
