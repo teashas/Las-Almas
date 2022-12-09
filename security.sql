@@ -61,3 +61,18 @@ INSERT INTO sec_recruiting VALUES ('23717', '50', 'NV', '1999-09-29');
 INSERT INTO sec_recruiting VALUES ('37152', '100', 'CA', '2008-12-31');
 INSERT INTO sec_recruiting VALUES ('21937', '90', 'CA', '2010-01-01');
 INSERT INTO sec_recruiting VALUES ('27123', '80', 'AZ', '2000-05-07');
+
+--  The security manager will then check the employee’s weapon to ensure adequate ammo is in the warehouse needed for the security on shift
+
+DROP PROCEDURE viewWeapon;
+
+DELIMITER //
+CREATE PROCEDURE viewWeapon(id INT(5))
+BEGIN
+SELECT sec_security.employee_id, sec_weapons.service_weapon, ammo_type, ammo_pool FROM sec_weapons
+JOIN sec_security ON sec_weapons.employee_id = sec_security.employee_id
+WHERE sec_security.employee_id = id;
+END // 
+DELIMITER ; 
+
+CALL viewWeapon('21762');
