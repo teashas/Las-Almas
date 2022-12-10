@@ -6,7 +6,7 @@
 -- daily_production: yes (1) or no (0)
 -- biweekly_production: yes (1) or no (0)
 
-CREATE TABLE prod_products(product_id INT(5), product_name VARCHAR(15), market_value INT(3), quantity INT(3), daily_production INT(1), biweekly_production INT(1));
+CREATE TABLE prod_products(product_id INT(5), product_name VARCHAR(15), market_value INT(3), production_cost INT(3), quantity INT(3), daily_production INT(1), biweekly_production INT(1));
 
 -- creates table: prod_manager
 -- manager_id: unique ID of manager
@@ -40,11 +40,11 @@ CREATE TABLE prod_supply(supply_id INT(5), product_id INT(5), supply_amount INT(
 
 -- insert data into prod_products table      
 
-INSERT INTO prod_products VALUES (20001, 'Cannabis', 50, 100, '1', '0');
-INSERT INTO prod_products VALUES (20002, 'Heroin', 150, '500', '0', '1');
-INSERT INTO prod_products VALUES (20003, 'LSD Acid', 150, '250', '0', '1');
-INSERT INTO prod_products VALUES (20004, 'PCP', 40, 63, '1', '0');
-INSERT INTO prod_products VALUES (20005, 'MDMA', 70, 700, '1', '0'); 
+INSERT INTO prod_products VALUES (20001, 'Cannabis', 50, 20, 100, '1', '0');
+INSERT INTO prod_products VALUES (20002, 'Heroin', 150, 70, 500, '0', '1');
+INSERT INTO prod_products VALUES (20003, 'LSD Acid', 150, 70, 250, '0', '1');
+INSERT INTO prod_products VALUES (20004, 'PCP', 40, 63, 600, '1', '0');
+INSERT INTO prod_products VALUES (20005, 'MDMA', 70, 25, 70, '1', '0'); 
 
 -- insert data into prod_manager table  
 
@@ -79,10 +79,14 @@ INSERT INTO prod_supply VALUES (50004, 20004, 800, 12);
 INSERT INTO prod_supply VALUES (50005, 20005, 200, 150);    
 
 -- Return on Investment
+
+DROP PROCEDURE return_on_investment;
+
 DELIMITER //
 CREATE PROCEDURE return_on_investment()
 BEGIN
-SELECT market_value-production_cost AS ROI 
-FROM prod_products;
+SELECT product_id, product_name, market_value-production_cost AS ROI FROM prod_products;
 END //
-DELIMITER;
+DELIMITER ;
+
+CALL return_on_investment();
