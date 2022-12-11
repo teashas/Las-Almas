@@ -54,8 +54,10 @@ DROP PROCEDURE viewProducts;
 DELIMITER //
 CREATE PROCEDURE viewProducts(id INT(5))
 BEGIN
-SELECT inf_product.product_id, name, quantity, production_date, manager_id FROM inf_product
+SELECT inf_product.product_id, name, quantity, production_date, manager_id,
+inf_customer.customer_id, first_name, last_name, address, phone_number FROM inf_product
 JOIN inf_manager ON inf_product.product_id = inf_manager.product_id
+JOIN inf_customer ON inf_manager.customer_id = inf_customer.customer_id
 WHERE manager_id = id;
 END // 
 DELIMITER ; 
@@ -70,6 +72,8 @@ DELIMITER //
 CREATE PROCEDURE insertCustomer(cid INT(5), fname VARCHAR(15), lname VARCHAR(15), addy VARCHAR(60), phone INT(10))
 BEGIN
 INSERT INTO inf_customer VALUES (cid, fname, lname, addy, phone);
+SELECT * FROM inf_customer
+WHERE customer_id = cid;
 END //
 DELIMITER ; 
 
