@@ -15,32 +15,53 @@ if ($conn->connect_error) {
 }
 
 // Call mysql stored prodecure with an argument
-echo "You are in the Influence database." . "\n\n";
+echo "You are in the Distribution database." . "\n";
+$user_input = readline("Select a to view table; b to see runner out: ");
 
-//$manager_id = readline("Enter employee ID: ");
-$customer_id = readline("Enter customer ID: ");
-$first_name = readline("Enter customer first name: ");
-$last_name = readline("Enter customer last name: ");
-$address = readline("Enter customer address: ");
-$phone_number = readline("Enter customer number: ");
+// user inputs a 
+if ($user_input == 'a') {
 
-$sql = "CALL insertCustomer('$customer_id', '$first_name', '$last_name', '$address', '$phone_number')";
-
-$result = $conn->query($sql);
-// Print the results as a table using echo
-if ($result->num_rows > 0) {
+  $sql = "CALL runner_in()";
+    
+  $result = $conn->query($sql);
+  // Print the results as a table using echo
+  if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        //echo "\nLogged in as manager #" . $row["manager_id"] . "\n";
-        echo "\nNew client added to database. \n";
-        echo "customer ID:  " . $row["customer_id"] . "\n";
-        echo "first name:  " . $row["first_name"] . "\n";
-        echo "last name:  " . $row["last_name"] . "\n";
-        echo "address:  " . $row["address"] . "\n";
-        echo "phone number:  " . $row["phone_number"] . "\n";
+      echo "\n";
+      echo "runner ID:  " . $row["runner_id"] . "\n";
+      echo "date out:  " . $row["date_out"] . "\n";
+      echo "date in: " . $row["date_in"] . "\n"; 
+      echo "transit method: " . $row["method"] . "\n"; 
+      echo "product name: " . $row["product_type"] . "\n"; 
+      echo "total amount: " . $row["collected"] . "\n"; 
+      echo "product quantity: " . $row["quantity"] . "\n"; 
     }
-} else {
+  } else {
     echo "0 results";
+  }
+// user input = b  
+} else if ($user_input == 'b') {
+  $runner_id = readline("Enter runner id: ");
+  
+  $sql = "CALL runner_out('$runner_id')";
+    
+  $result = $conn->query($sql);
+  // Print the results as a table using echo
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      echo "\nLogged in as runner #" . $row["runner_id"] . "\n\n";
+      echo "product quantity:  " . $row["quantity"] . "\n";
+      echo "product name:  " . $row["product_type"] . "\n";
+      echo "transit method:  " . $row["method"] . "\n";
+      echo "total amount:  " . $row["collect"] . "\n";
+    }
+  } else {
+    echo "0 results";
+  }
+  
+// user input != a || b
+} else {
+  echo "0 results";
 }
-
 $conn->close();
 ?>
