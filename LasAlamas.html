@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title> Distribution </title>
+<head>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    img {
+      height: 150px;
+    }
+
+    div {
+      text-align: center;
+      padding: 10px;
+    }
+
+    input {
+      margin: 5px;
+    }
+    
+  </style>
+  <script src="Vehicles.js"></script>
+  
+</head>
+
+<body>
+<h1>Las Alamas Distribution</h1>
+<form action = "LasAlamas.php">
+  <div>
+    <input id="btn0" type="button" value="Manager Request">
+	<input id="btn1" type="button" value="Runner Out">
+	<p id = "p1">[]</p>
+  </div>
+</form>
+</body>
+<script>
+function loadText(){
+	document.getElementById("p1").innerHTML = $rows[1];
+}
+
+function start() {
+	document.getElementById("btn1").addEventListener("click", loadText, false);
+}
+
+window.addEventListener("load", start, "false");
+
+</script>
+
+</html>
