@@ -1,0 +1,136 @@
+Script started on Tue 13 Dec 2022 09:45:37 PM MST
+[?1034h[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m exitphp production.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/production.php on line 8
+Connected successfully
+You are in the Production database.
+
+product ID:  20001
+name:  Cannabis
+THE RETURN ON INVESTMENT IS 30 USD. 
+
+product ID:  20003
+name:  LSD Acid
+THE RETURN ON INVESTMENT IS 80 USD. 
+
+product ID:  20004
+name:  PCP
+THE RETURN ON INVESTMENT IS -23 USD. 
+
+product ID:  20005
+name:  MDMA
+THE RETURN ON INVESTMENT IS 45 USD. 
+
+product ID:  20002
+name:  Heroin
+THE RETURN ON INVESTMENT IS 80 USD. 
+[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m php production.phpexit[Kphp production.phpdistribution.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/distribution.php on line 8
+Connected successfully
+You are in the Distribution database.
+Select a to view table; b to see runner out: a
+
+runner ID:  40001
+date out:  2001-01-28 00:00:00
+date in: 2001-01-28 03:00:00
+transit method: car
+product name: Cannabis
+total amount: 200
+product quantity: 2
+
+runner ID:  40002
+date out:  2022-12-01 02:00:00
+date in: 2022-12-01 04:00:00
+transit method: car
+product name: Heroin
+total amount: 1200
+product quantity: 9
+
+runner ID:  40003
+date out:  2005-03-31 07:00:00
+date in: 2005-04-01 00:00:00
+transit method: plane
+product name: LSD Acid
+total amount: 4500
+product quantity: 14
+
+runner ID:  40004
+date out:  2018-06-19 12:00:00
+date in: 2018-06-21 17:00:00
+transit method: plane
+product name: PCP
+total amount: 5800
+product quantity: 22
+
+runner ID:  40005
+date out:  2011-02-11 19:00:00
+date in: 2011-02-11 22:00:00
+transit method: car
+product name: MDMA
+total amount: 600
+product quantity: 5
+[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m php distribution.php[2Pproduction.phpdistribution.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/distribution.php on line 8
+Connected successfully
+You are in the Distribution database.
+Select a to view table; b to see runner out: b
+Enter runner id: 40001
+PHP Notice:  Undefined index: runner_id in /home/students/teashas/CS317/LasAlmas/distribution.php on line 52
+
+Logged in as runner #
+
+product quantity:  2
+product name:  Cannabis
+transit method:  car
+total amount:  100
+[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m php distribution.php[2Pproduction.phpexit[Kphp production.phpdistribution.php[3Pinfluence.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/influence.php on line 8
+Connected successfully
+You are in the Influence database.
+Select a to view table; b to insert new client: a
+Enter employee id: 10005
+
+Logged in as manager #10005
+
+product ID:  20005
+name:  MDMA
+quantity:  600
+production date:  2006-10-18 13:00:00
+
+customer ID:  5
+first name:  Levi
+last name:  Garcia
+address:  2752 Yellow Drive
+phone number:  273491367
+[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m php influence.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/influence.php on line 8
+Connected successfully
+You are in the Influence database.
+Select a to view table; b to insert new client: b
+Enter customer ID: 0000[K11
+Enter customer first name: Bay
+Enter customer last name: Smith
+Enter customer address: 888 Taq Ste[Kreet
+Enter customer phone number: 374859274
+
+New client added to database. 
+customer ID:  11
+first name:  Bay
+last name:  Smith
+address:  888 Taq Street
+phone number:  374859274
+[[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m php influence.phpdistribution.php[2Pproduction.phpexit[Kphp production.phpdistribution.php[3Pinfluence.phpexit[Kphp influence.php[1Psecurity.php
+PHP Warning:  mysqli::mysqli(): Headers and client library minor version mismatch. Headers:50550 Library:50642 in /home/students/teashas/CS317/LasAlmas/security.php on line 8
+Connected successfully
+You are in the Security database.
+
+Enter employee id: 37152
+
+Logged in as employee #37152
+
+service weapon:  MP5
+ammo type:  9mm
+pool:  10
+ [[01;35mteashas[m[01;33m@[m[01;36mprclab1[m:[01;33m~/CS317/LasAlmas[m][31m$[m exit
+exit
+
+Script done on Tue 13 Dec 2022 09:47:05 PM MST
