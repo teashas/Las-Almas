@@ -19,7 +19,7 @@ echo "You are in the Distribution database." . "\n";
 $user_input = readline("Select a to view table; b to see runner out: ");
 
 // user inputs a 
-if ($user_input == 'a') {
+if ($user_input == 'runner_in') {
 
   $sql = "CALL runner_in()";
     
@@ -40,7 +40,7 @@ if ($user_input == 'a') {
     echo "0 results";
   }
 // user input = b  
-} else if ($user_input == 'b') {
+} else if ($user_input == 'runner_out') {
   $runner_id = readline("Enter runner id: ");
   
   $sql = "CALL runner_out('$runner_id')";
